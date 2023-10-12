@@ -1,0 +1,40 @@
+$num : 0;
+body{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    >section{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        &:nth-of-type(1){
+            background-image: url(../Image/52211883534_5987bc6836_k.webp);
+            background-size: cover;
+            // background-position: 0 -140px;
+        }
+        &:nth-of-type(2){
+            display: flex;
+            >div{
+                // border: 1px solid white;
+                flex-grow: 1;
+                opacity: 0;
+                transition: 1.5s ease-in-out;
+                background-image: url(../Image/1.webp);
+                background-size: cover;
+                // background-position: 0 -140px;
+                &:hover{
+                    transition: 0s;
+                    opacity: 1;
+                }
+                @for $i from 1 through 20{
+                    &:nth-of-type(#{$i}){
+                        background-position: $num+0%;
+                    }
+                    $num : $num + 10
+                }
+            }
+        }
+    }
+}
